@@ -87,6 +87,67 @@ h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', serif; }
   transition: height 0.4s ease;
 }
 .site-header.scrolled .header-logo img { height: 34px; }
+
+/* ===== SERVICE SUB-NAV ===== */
+.service-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  background: var(--dark-surface);
+  border-bottom: 1px solid rgba(196,162,101,0.15);
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  padding: 0;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+.service-nav.visible {
+  transform: translateY(72px);
+  opacity: 1;
+}
+.site-header.scrolled ~ .service-nav.visible,
+.service-nav.scrolled-pos {
+  transform: translateY(56px);
+}
+.service-nav a {
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.4rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+}
+.service-nav a:hover {
+  color: var(--gold);
+}
+.service-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%; right: 50%;
+  height: 2px;
+  background: var(--gold);
+  transition: left 0.3s ease, right 0.3s ease;
+}
+.service-nav a:hover::after {
+  left: 1rem; right: 1rem;
+}
+@media (max-width: 768px) {
+  .service-nav {
+    overflow-x: auto;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .service-nav::-webkit-scrollbar { display: none; }
+  .service-nav a { font-size: 0.62rem; padding: 0.6rem 1rem; }
+}
+
 .header-nav { display: flex; align-items: center; gap: 2rem; }
 .header-nav a {
   color: white;
@@ -981,6 +1042,17 @@ footer {
   <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank" class="btn-book" onclick="closeMobileMenu()">Book Consultation</a>
 </div>
 
+<!-- SERVICE SUB-NAV -->
+<nav class="service-nav" id="serviceNav">
+  <a href="#services">Injectables</a>
+  <a href="#services">Laser Treatments</a>
+  <a href="#services">Aesthetic Treatments</a>
+  <a href="#services">Skin Tightening</a>
+  <a href="#services">Body Treatments</a>
+  <a href="#services">Wellness</a>
+  <a href="#services">Specials</a>
+</nav>
+
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-bg"></div>
@@ -1106,7 +1178,7 @@ footer {
     <h2 class="section-title">Treatments Tailored<br>to <em>Your Goals</em></h2>
     <div class="services-grid">
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Injectables - Botox & Fillers" loading="lazy">
+        <img src="https://www.adamandevemedspa.com/wp-content/uploads/2022/09/injectables-botox.jpg" alt="Injectables - Botox & Fillers" loading="lazy">
         <div class="service-card-overlay">
           <h3>Injectables</h3>
           <p>Botox, Dysport, Juvederm, Restylane, Sculptra, PDO Thread Lift — expertly administered for natural, balanced results.</p>
@@ -1114,7 +1186,7 @@ footer {
         </div>
       </div>
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80" alt="Laser Treatments" loading="lazy">
+        <img src="https://www.adamandevemedspa.com/wp-content/uploads/2022/09/ipl-photo-facial01.jpg" alt="Laser Treatments" loading="lazy">
         <div class="service-card-overlay">
           <h3>Laser Treatments</h3>
           <p>CO2 resurfacing, IPL Photofacial, Clear + Brilliant, UltraClear, laser hair removal, and PiQo4 tattoo removal.</p>
@@ -1122,7 +1194,7 @@ footer {
         </div>
       </div>
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80" alt="Aesthetic Treatments & Facials" loading="lazy">
+        <img src="https://www.adamandevemedspa.com/wp-content/uploads/2022/09/aes-hydrafacial.jpg" alt="Aesthetic Treatments & Facials" loading="lazy">
         <div class="service-card-overlay">
           <h3>Aesthetic Treatments</h3>
           <p>HydraFacial, DiamondGlow, chemical peels, microneedling, dermaplaning, OxyGeneo facial, and PRP hair restoration.</p>
@@ -1132,7 +1204,7 @@ footer {
     </div>
     <div class="services-row2">
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80" alt="Skin Tightening" loading="lazy">
+        <img src="https://www.adamandevemedspa.com/wp-content/uploads/2022/09/skin-ultherapy.jpg" alt="Skin Tightening" loading="lazy">
         <div class="service-card-overlay">
           <h3>Skin Tightening</h3>
           <p>Ultherapy, RF Microneedling, triLift, and Cellsound for non-surgical lifting and firming.</p>
@@ -1140,7 +1212,7 @@ footer {
         </div>
       </div>
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Body Contouring" loading="lazy">
+        <img src="https://www.adamandevemedspa.com/wp-content/uploads/2022/09/body-sculpsure.jpg" alt="Body Contouring" loading="lazy">
         <div class="service-card-overlay">
           <h3>Body Contouring</h3>
           <p>SculpSure, Aveli cellulite treatment, sclerotherapy for spider veins, and body sculpting treatments.</p>
@@ -1148,7 +1220,7 @@ footer {
         </div>
       </div>
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=600&q=80" alt="Wellness & Hormone Therapy" loading="lazy">
+        <img src="https://www.adamandevemedspa.com/wp-content/uploads/2023/04/pellet-fix-hormone-therapy-hero-2048x1367-1.jpg" alt="Wellness & Hormone Therapy" loading="lazy">
         <div class="service-card-overlay">
           <h3>Wellness</h3>
           <p>Bioidentical hormone replacement therapy, IV therapy, peptide therapy, and semaglutide weight loss injections.</p>
@@ -1408,10 +1480,14 @@ footer {
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-// Header scroll effect
+// Header scroll effect + service nav
 const header = document.getElementById('siteHeader');
+const serviceNav = document.getElementById('serviceNav');
 window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 60);
+  const scrolled = window.scrollY > 60;
+  header.classList.toggle('scrolled', scrolled);
+  serviceNav.classList.toggle('visible', window.scrollY > 300);
+  serviceNav.classList.toggle('scrolled-pos', scrolled);
 });
 
 // Mobile menu
