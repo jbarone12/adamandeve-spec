@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adam & Eve Medical Aesthetics | Premier Med Spa in Scottsdale, AZ</title>
+<meta name="description" content="Adam & Eve Medical Aesthetics is Scottsdale's Allergan Black Diamond med spa — top 1% nationally for Botox, Juvederm & Voluma. Dedicated to the art of beauty and graceful aging.">
+<link rel="icon" type="image/png" href="https://www.adamandevemedspa.com/wp-content/uploads/2022/09/adamandevemedspa-logo.png">
+<meta property="og:title" content="Adam & Eve Medical Aesthetics | Scottsdale's #1 Med Spa">
+<meta property="og:description" content="Allergan Black Diamond — Top 1% in the US. Dedicated to the art of beauty and graceful aging. Book your consultation today.">
+<meta property="og:image" content="https://www.adamandevemedspa.com/wp-content/uploads/2022/09/ser-img01.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<style>
+:root {
+  --gold: #C4A265;
+  --gold-light: #D4B87A;
+  --dark: #141414;
+  --dark-surface: #1A1A1A;
+  --dark-card: #1E1E1E;
+  --cream: #FAF7F2;
+  --cream-dark: #F0EBE3;
+  --text-dark: #1a1a1a;
+  --text-light: #F5F0EB;
+  --text-muted: #999;
+  --rose: #C4917A;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-dark);
+  background: var(--cream);
+  overflow-x: hidden;
+}
+h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', serif; }
+
+/* ===== HEADER ===== */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 1.25rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.4s ease;
+}
+.site-header.scrolled {
+  background: rgba(20,20,20,0.97);
+  backdrop-filter: blur(20px);
+  padding: 0.75rem 3rem;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+}
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+.header-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+.header-logo-text .logo-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+}
+.header-logo-text .logo-tag {
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.8;
+}
+.header-logo img {
+  height: 44px;
+  filter: brightness(0) invert(1);
+  transition: height 0.4s ease;
+}
+.site-header.scrolled .header-logo img { height: 34px; }
+.header-nav { display: flex; align-items: center; gap: 2rem; }
+.header-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  transition: opacity 0.3s;
+}
+.header-nav a:hover { opacity: 1; }
+.btn-book {
+  display: inline-block;
+  background: var(--gold);
+  color: white;
+  padding: 0.65rem 1.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-book:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(196,162,101,0.45);
+}
+.btn-outline {
+  display: inline-block;
+  color: white;
+  padding: 0.65rem 1.6rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1001;
+}
+.mobile-toggle span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: white;
+  transition: all 0.3s ease;
+}
+.mobile-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.mobile-toggle.open span:nth-child(2) { opacity: 0; }
+.mobile-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(20,20,20,0.98);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu .btn-book { font-family: 'DM Sans', sans-serif; font-size: 0.8rem; }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: var(--dark);
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://www.adamandevemedspa.com/wp-content/uploads/2022/09/about-img.png') center/cover;
+  opacity: 0.3;
+  transform: scale(1.05);
+  transition: transform 8s ease;
+}
+.hero:hover .hero-bg { transform: scale(1.0); }
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20,20,20,0.25) 0%, rgba(20,20,20,0.5) 50%, rgba(20,20,20,0.88) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 840px;
+  padding: 0 2rem;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(196,162,101,0.35);
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.hero-badge::before, .hero-badge::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.5;
+}
+.hero h1 {
+  font-size: clamp(3rem, 6vw, 5.2rem);
+  font-weight: 300;
+  color: white;
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+.hero-sub {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.06em;
+  max-width: 520px;
+  margin: 0 auto 2.8rem;
+  line-height: 1.75;
+}
+.hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: rgba(255,255,255,0.35);
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.hero-scroll span {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, rgba(196,162,101,0.5), transparent);
+  animation: scrollPulse 2s ease infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+/* ===== SECTIONS ===== */
+section { padding: 7rem 0; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.section-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+.section-title em { font-style: italic; color: var(--gold); }
+
+/* ===== TICKER ===== */
+.award-ticker {
+  background: var(--gold);
+  padding: 0.7rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-flex;
+  gap: 3rem;
+  animation: ticker 25s linear infinite;
+}
+.ticker-item {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(20,20,20,0.85);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.ticker-item::before { content: '✦'; font-size: 0.5rem; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* ===== ABOUT ===== */
+.about { background: var(--cream); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.about-image {
+  position: relative;
+  overflow: visible;
+}
+.about-image img {
+  width: 100%;
+  height: 580px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+.about-image-accent {
+  position: absolute;
+  top: -1.2rem;
+  left: -1.2rem;
+  width: 120px;
+  height: 120px;
+  border: 1px solid var(--gold);
+  opacity: 0.25;
+  pointer-events: none;
+}
+.about-image-accent2 {
+  position: absolute;
+  bottom: -1.2rem;
+  right: -1.2rem;
+  width: 80px;
+  height: 80px;
+  border: 1px solid var(--gold);
+  opacity: 0.18;
+  pointer-events: none;
+}
+.about-badge {
+  position: absolute;
+  bottom: 2rem;
+  left: -2.5rem;
+  background: var(--dark);
+  padding: 1.25rem 1.5rem;
+  border-left: 2px solid var(--gold);
+}
+.about-badge .badge-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+}
+.about-badge .badge-text {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.25rem;
+}
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+.about-text .highlight {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.55;
+  border-left: 2px solid var(--gold);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+}
+.about-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--gold);
+}
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+
+/* ===== CREDENTIALS ===== */
+.credentials {
+  background: var(--dark);
+  padding: 4.5rem 0;
+  border-top: 1px solid rgba(196,162,101,0.1);
+  border-bottom: 1px solid rgba(196,162,101,0.1);
+}
+.cred-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.cred-header span {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.65;
+}
+.cred-featured {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.cred-featured-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 3rem;
+  border: 1px solid rgba(196,162,101,0.4);
+  background: rgba(196,162,101,0.05);
+  position: relative;
+}
+.cred-featured-badge::before {
+  content: '✦';
+  position: absolute;
+  top: -0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dark);
+  padding: 0 0.5rem;
+  color: var(--gold);
+  font-size: 0.7rem;
+}
+.cred-diamond-label {
+  font-size: 0.55rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.7;
+}
+.cred-diamond-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: white;
+  letter-spacing: 0.05em;
+}
+.cred-diamond-sub {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.08em;
+}
+.cred-grid {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.cred-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.2rem;
+  border: 1px solid rgba(196,162,101,0.2);
+  background: rgba(196,162,101,0.03);
+  transition: all 0.3s ease;
+}
+.cred-badge:hover {
+  border-color: rgba(196,162,101,0.5);
+  background: rgba(196,162,101,0.08);
+  transform: translateY(-2px);
+}
+.cred-badge svg {
+  width: 16px; height: 16px;
+  color: var(--gold);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+.cred-badge:hover svg { opacity: 1; }
+.cred-badge span {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+.cred-badge:hover span { color: rgba(255,255,255,0.9); }
+
+/* ===== SERVICES ===== */
+.services { background: var(--cream); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+.service-card {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+.service-card:hover img { transform: scale(1.07); }
+.service-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(20,20,20,0.88) 0%, rgba(20,20,20,0.2) 50%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  transition: background 0.4s;
+}
+.service-card:hover .service-card-overlay {
+  background: linear-gradient(0deg, rgba(20,20,20,0.92) 0%, rgba(20,20,20,0.45) 60%, rgba(20,20,20,0.1) 100%);
+}
+.service-card h3 {
+  font-size: 1.55rem;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 0.4rem;
+}
+.service-card p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.65;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.4s;
+  opacity: 0;
+}
+.service-card:hover p { max-height: 100px; opacity: 1; }
+.service-learn {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.4s ease 0.1s;
+}
+.service-card:hover .service-learn { opacity: 1; transform: translateY(0); }
+.services-row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+/* ===== TEAM ===== */
+.team { background: var(--dark); color: white; }
+.team .section-title { color: white; }
+.team-intro {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+  max-width: 680px;
+  margin-bottom: 3.5rem;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+.team-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--dark-card);
+  transition: transform 0.4s ease;
+}
+.team-card:hover { transform: translateY(-4px); }
+.team-card-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  filter: grayscale(20%);
+  transition: filter 0.4s ease, transform 0.5s ease;
+}
+.team-card:hover .team-card-img { filter: grayscale(0%); transform: scale(1.03); }
+.team-card-body {
+  padding: 1.25rem 1.25rem 1.5rem;
+  border-top: 1px solid rgba(196,162,101,0.15);
+}
+.team-card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 0.2rem;
+}
+.team-card-cred {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  opacity: 0.8;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.team-card-title {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.5;
+}
+
+/* ===== MISSION ===== */
+.mission {
+  background: var(--cream-dark);
+  text-align: center;
+  padding: 8rem 0;
+}
+.mission-inner { max-width: 720px; margin: 0 auto; }
+.mission h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.45;
+  margin-bottom: 2rem;
+}
+.mission p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: #666;
+}
+.mission-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 2rem auto;
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+  background: var(--dark);
+  color: white;
+  padding: 7rem 0;
+}
+.testimonial-slide {
+  padding: 2.5rem;
+  background: var(--dark-card);
+  border: 1px solid rgba(255,255,255,0.05);
+  height: auto;
+}
+.testimonial-stars {
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5rem;
+}
+.testimonial-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 1.5rem;
+}
+.testimonial-author {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+}
+.testimonial-service {
+  font-size: 0.68rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+  opacity: 0.8;
+}
+.swiper-pagination-bullet {
+  background: var(--gold) !important;
+  opacity: 0.3 !important;
+}
+.swiper-pagination-bullet-active { opacity: 1 !important; }
+.swiper-button-next, .swiper-button-prev {
+  color: var(--gold) !important;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover { opacity: 1; }
+.swiper-button-next::after, .swiper-button-prev::after { font-size: 1.2rem !important; }
+
+/* ===== VIDEO ===== */
+.video-section { background: var(--cream); text-align: center; }
+.video-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 3rem auto 0;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  box-shadow: 0 20px 70px rgba(0,0,0,0.12);
+}
+.video-wrapper iframe { width: 100%; height: 100%; border: none; }
+
+/* ===== BOOKING CTA ===== */
+.booking-cta {
+  position: relative;
+  background: var(--dark);
+  padding: 8rem 0;
+  text-align: center;
+  overflow: hidden;
+}
+.booking-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://www.adamandevemedspa.com/wp-content/uploads/2022/09/ser-img01.jpg') center/cover;
+  opacity: 0.12;
+}
+.booking-cta-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.booking-cta .section-title { color: white; margin-bottom: 1rem; }
+.booking-cta p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+.booking-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.booking-cta .phone-link {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-top: 1.5rem;
+  transition: color 0.3s;
+}
+.booking-cta .phone-link:hover { color: var(--gold); }
+
+/* ===== NEWSLETTER ===== */
+.newsletter {
+  background: var(--gold);
+  padding: 4rem 0;
+  text-align: center;
+}
+.newsletter h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 300;
+  color: var(--dark);
+  margin-bottom: 0.75rem;
+}
+.newsletter p {
+  font-size: 0.9rem;
+  color: rgba(20,20,20,0.6);
+  margin-bottom: 2rem;
+}
+.newsletter-form {
+  display: flex;
+  gap: 0;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.newsletter-form input {
+  flex: 1;
+  padding: 0.85rem 1.25rem;
+  border: none;
+  background: rgba(20,20,20,0.1);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  color: var(--dark);
+  outline: none;
+}
+.newsletter-form input::placeholder { color: rgba(20,20,20,0.45); }
+.newsletter-form button {
+  padding: 0.85rem 1.75rem;
+  background: var(--dark);
+  color: white;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.newsletter-form button:hover { background: #2a2a2a; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: #0E0E0E;
+  padding: 4.5rem 0 2rem;
+  color: rgba(255,255,255,0.45);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand .brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: white;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+.footer-brand .brand-tag {
+  font-size: 0.58rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.65;
+  margin-bottom: 1.25rem;
+}
+.footer-brand p {
+  font-size: 0.82rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+}
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: all 0.3s;
+}
+.footer-social a:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.footer-col h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 1.25rem;
+}
+.footer-col a, .footer-col p {
+  display: block;
+  font-size: 0.82rem;
+  line-height: 2;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--gold); }
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-bottom p { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
+.footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.3s; }
+.footer-bottom a:hover { color: var(--gold); }
+.bar1-credit {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.08em;
+}
+.bar1-credit a { color: var(--gold); opacity: 0.5; text-decoration: none; transition: opacity 0.3s; }
+.bar1-credit a:hover { opacity: 1; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .services-row2 { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .site-header { padding: 1rem 1.5rem; }
+  .site-header.scrolled { padding: 0.7rem 1.5rem; }
+  .header-nav { display: none; }
+  .mobile-toggle { display: flex; }
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-badge { left: 0; }
+  .services-grid { grid-template-columns: 1fr; }
+  .services-row2 { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  section { padding: 5rem 0; }
+}
+@media (max-width: 480px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .about-stats { flex-wrap: wrap; gap: 1.5rem; }
+  .cred-grid { flex-direction: column; align-items: center; }
+  .cred-badge { width: 100%; max-width: 320px; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <a href="#" class="header-logo">
+    <div class="header-logo-text">
+      <span class="logo-name">Adam & Eve</span>
+      <span class="logo-tag">Medical Aesthetics</span>
+    </div>
+  </a>
+  <nav class="header-nav">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#team">Our Team</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="tel:4805756584" style="color:rgba(255,255,255,0.5); font-size:0.72rem;">(480) 575-6584</a>
+    <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank" class="btn-book">Book Now</a>
+  </nav>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#team" onclick="closeMobileMenu()">Our Team</a>
+  <a href="#testimonials" onclick="closeMobileMenu()">Reviews</a>
+  <a href="tel:4805756584" onclick="closeMobileMenu()">(480) 575-6584</a>
+  <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank" class="btn-book" onclick="closeMobileMenu()">Book Consultation</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Allergan Black Diamond · Top 1% in the US</div>
+    <h1>Dedicated to the Art of<br><em>Beauty & Graceful Aging</em></h1>
+    <p class="hero-sub">Scottsdale's premier medical aesthetics destination — where clinical excellence meets timeless results. Trusted since 2012.</p>
+    <div class="hero-ctas">
+      <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank" class="btn-book">Book a Consultation</a>
+      <a href="#services" class="btn-outline">Explore Services</a>
+    </div>
+  </div>
+  <a href="#about" class="hero-scroll">Discover<span></span></a>
+</section>
+
+<!-- AWARD TICKER -->
+<div class="award-ticker">
+  <div class="ticker-inner" id="tickerInner">
+    <span class="ticker-item">Allergan Black Diamond Status</span>
+    <span class="ticker-item">Top 1% in the US for Botox</span>
+    <span class="ticker-item">4.9 Stars · 233+ Reviews</span>
+    <span class="ticker-item">Established 2012</span>
+    <span class="ticker-item">Scottsdale, AZ</span>
+    <span class="ticker-item">Ultherapy Ultra Premier Provider</span>
+    <span class="ticker-item">Juvederm · Voluma · Restylane</span>
+    <span class="ticker-item">Natural Results · Expert Care</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="ticker-item">Allergan Black Diamond Status</span>
+    <span class="ticker-item">Top 1% in the US for Botox</span>
+    <span class="ticker-item">4.9 Stars · 233+ Reviews</span>
+    <span class="ticker-item">Established 2012</span>
+    <span class="ticker-item">Scottsdale, AZ</span>
+    <span class="ticker-item">Ultherapy Ultra Premier Provider</span>
+    <span class="ticker-item">Juvederm · Voluma · Restylane</span>
+    <span class="ticker-item">Natural Results · Expert Care</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image">
+        <div class="about-image-accent"></div>
+        <img src="https://www.adamandevemedspa.com/wp-content/uploads/2022/09/about-img.png"
+             alt="Adam & Eve Medical Aesthetics facility in Scottsdale"
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800&q=80'">
+        <div class="about-badge">
+          <div class="badge-num">12+</div>
+          <div class="badge-text">Years in Scottsdale</div>
+        </div>
+        <div class="about-image-accent2"></div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">Where <em>Science Meets</em><br>Artistry</h2>
+        <p>Founded in 2012, Adam & Eve Medical Aesthetics has grown to become one of Scottsdale's most trusted and celebrated medical spas. Our team of licensed nurses, nurse practitioners, and master estheticians combine advanced medical training with an artist's eye for natural, beautiful results.</p>
+        <div class="highlight">"Our goal is to help you achieve timeless beauty through natural enhancements — using advanced technology and industry expertise to bring out your best self."</div>
+        <p>We've earned Allergan's prestigious Black Diamond status — placing us in the top 1% of aesthetic practices nationwide for Botox, Juvederm, and Voluma. But more than any award, we're proud of the trust our patients place in us every day.</p>
+        <div class="about-stats">
+          <div>
+            <div class="stat-num">Top 1%</div>
+            <div class="stat-label">Allergan Black Diamond</div>
+          </div>
+          <div>
+            <div class="stat-num">4.9★</div>
+            <div class="stat-label">233+ Reviews</div>
+          </div>
+          <div>
+            <div class="stat-num">12+</div>
+            <div class="stat-label">Years of Excellence</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials" id="credentials">
+  <div class="cred-header">
+    <span>Recognized Excellence</span>
+  </div>
+  <div class="cred-featured">
+    <div class="cred-featured-badge">
+      <div class="cred-diamond-label">Allergan · Highest Honor</div>
+      <div class="cred-diamond-title">◆ Black Diamond Status</div>
+      <div class="cred-diamond-sub">Top 1% of Aesthetic Practices Nationwide · Botox · Juvederm · Voluma</div>
+    </div>
+  </div>
+  <div class="cred-grid">
+    <div class="cred-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <span>Ultra Premier Ultherapy Provider</span>
+    </div>
+    <div class="cred-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+      <span>4.9-Star Rating · 233+ Reviews</span>
+    </div>
+    <div class="cred-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+      <span>Medical-Grade Treatments</span>
+    </div>
+    <div class="cred-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+      <span>Licensed RNs & Nurse Practitioners</span>
+    </div>
+    <div class="cred-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+      <span>Scottsdale, AZ · Est. 2012</span>
+    </div>
+    <div class="cred-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+      <span>Trusted by 10,000+ Patients</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Treatments Tailored<br>to <em>Your Goals</em></h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Injectables - Botox & Fillers" loading="lazy">
+        <div class="service-card-overlay">
+          <h3>Injectables</h3>
+          <p>Botox, Dysport, Juvederm, Restylane, Sculptra, PDO Thread Lift — expertly administered for natural, balanced results.</p>
+          <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank" class="service-learn">Book This Service →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80" alt="Laser Treatments" loading="lazy">
+        <div class="service-card-overlay">
+          <h3>Laser Treatments</h3>
+          <p>CO2 resurfacing, IPL Photofacial, Clear + Brilliant, UltraClear, laser hair removal, and PiQo4 tattoo removal.</p>
+          <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank" class="service-learn">Book This Service →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80" alt="Aesthetic Treatments & Facials" loading="lazy">
+        <div class="service-card-overlay">
+          <h3>Aesthetic Treatments</h3>
+          <p>HydraFacial, DiamondGlow, chemical peels, microneedling, dermaplaning, OxyGeneo facial, and PRP hair restoration.</p>
+          <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank" class="service-learn">Book This Service →</a>
+        </div>
+      </div>
+    </div>
+    <div class="services-row2">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Skin Tightening" loading="lazy">
+        <div class="service-card-overlay">
+          <h3>Skin Tightening</h3>
+          <p>Ultherapy, RF Microneedling, triLift, and Cellsound for non-surgical lifting and firming.</p>
+          <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank" class="service-learn">Book This Service →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1554481923-a6918bd997bc?w=600&q=80" alt="Body Contouring" loading="lazy">
+        <div class="service-card-overlay">
+          <h3>Body Contouring</h3>
+          <p>SculpSure, Aveli cellulite treatment, sclerotherapy for spider veins, and body sculpting treatments.</p>
+          <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank" class="service-learn">Book This Service →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Wellness & Hormone Therapy" loading="lazy">
+        <div class="service-card-overlay">
+          <h3>Wellness</h3>
+          <p>Bioidentical hormone replacement therapy, IV therapy, peptide therapy, and semaglutide weight loss injections.</p>
+          <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank" class="service-learn">Book This Service →</a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:3rem;">
+      <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank" class="btn-book" style="background:var(--dark); padding:0.9rem 2.5rem;">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+  <div class="container">
+    <div class="section-label">Our Providers</div>
+    <h2 class="section-title">Meet the <em>Experts</em><br>Behind Your Results</h2>
+    <p class="team-intro">Our team brings together decades of combined medical experience — from ICU nursing and plastic surgery to integrative medicine and laser certifications. Every provider at Adam & Eve is deeply committed to natural, beautiful outcomes.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <img class="team-card-img"
+             src="https://www.adamandevemedspa.com/wp-content/uploads/2022/09/chelsea-hoese-img.jpg"
+             alt="Chelsea Hoese, NP"
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80'">
+        <div class="team-card-body">
+          <div class="team-card-name">Chelsea Hoese</div>
+          <div class="team-card-cred">NP · Nurse Practitioner</div>
+          <div class="team-card-title">Specialist in bioidentical hormone replacement therapy and integrative medicine. 10+ years of expertise.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <img class="team-card-img"
+             src="https://www.adamandevemedspa.com/wp-content/uploads/2022/09/nicole-le-rendard-img.jpg"
+             alt="Nicole Le Rendard, RN"
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80'">
+        <div class="team-card-body">
+          <div class="team-card-name">Nicole Le Rendard</div>
+          <div class="team-card-cred">RN · Registered Nurse</div>
+          <div class="team-card-title">23+ years in nursing spanning pediatrics, dermatology & plastic surgery. Expert injector in Botox, fillers, and Ultherapy.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <img class="team-card-img"
+             src="https://www.adamandevemedspa.com/wp-content/uploads/2025/05/IMG_1630-882x1024.jpeg"
+             alt="Maria McGarry, RN, BSN"
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=400&q=80'">
+        <div class="team-card-body">
+          <div class="team-card-name">Maria McGarry</div>
+          <div class="team-card-cred">RN, BSN · Certified Injector</div>
+          <div class="team-card-title">30+ years of medical experience, including ICU and neurology. Expert in injectables, lasers, IPL, and hormone therapy.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <img class="team-card-img"
+             src="https://www.adamandevemedspa.com/wp-content/uploads/2024/11/Jenni-F3.jpg"
+             alt="Jenni Presmyk, RN, BSN"
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80'">
+        <div class="team-card-body">
+          <div class="team-card-name">Jenni Presmyk</div>
+          <div class="team-card-cred">RN, BSN, CNI, CLT</div>
+          <div class="team-card-title">Surgical nursing background with top cosmetic surgeons. Describes aesthetic medicine as her "happy medicine."</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <img class="team-card-img"
+             src="https://www.adamandevemedspa.com/wp-content/uploads/2022/09/marisa-guido-img.jpg"
+             alt="Marisa Guido, RN, BSN"
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80'">
+        <div class="team-card-body">
+          <div class="team-card-name">Marisa Guido</div>
+          <div class="team-card-cred">RN, BSN · Injector</div>
+          <div class="team-card-title">Neuro trauma nursing background. Passionate about natural-looking results that enhance your unique beauty.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <img class="team-card-img"
+             src="https://www.adamandevemedspa.com/wp-content/uploads/2022/09/jennifer-img.jpg"
+             alt="Jennifer Olesinski, LME, CLT"
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1614023342667-6f060e9d1e04?w=400&q=80'">
+        <div class="team-card-body">
+          <div class="team-card-name">Jennifer Olesinski</div>
+          <div class="team-card-cred">LME, CLT · Master Esthetician</div>
+          <div class="team-card-title">28+ years in aesthetics since 1996. Head Esthetician trained in Southern CA. Certified in lasers, Ultherapy, and body sculpting.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <img class="team-card-img"
+             src="https://www.adamandevemedspa.com/wp-content/uploads/2024/11/Jenna-Arancibia.jpg"
+             alt="Jenna Arancibia, LME, CLT"
+             loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80'">
+        <div class="team-card-body">
+          <div class="team-card-name">Jenna Arancibia</div>
+          <div class="team-card-cred">LME, CLT · Esthetician</div>
+          <div class="team-card-title">Penrose Academy graduate with a background in marketing & PR. Specializes in microneedling, chemical peels, and RF microneedling.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission">
+  <div class="container">
+    <div class="mission-inner">
+      <div class="section-label" style="text-align:center;">Our Philosophy</div>
+      <h2>"We believe beauty is not about perfection — it's about bringing out the most confident, radiant version of you."</h2>
+      <div class="mission-divider"></div>
+      <p>At Adam & Eve Medical Aesthetics, every treatment begins with a thorough consultation. We listen to your goals, assess your unique anatomy, and design a personalized plan that honors who you are. Our commitment to natural results means your friends will notice you look amazing — not that you've had work done.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-label">Patient Stories</div>
+    <h2 class="section-title" style="color:white; margin-bottom:3rem;">What Our Patients<br><em>Are Saying</em></h2>
+    <div class="swiper testimonialSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="testimonial-slide">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">"I would not trust my face work to anybody else! The entire team is incredibly knowledgeable and always make me feel so comfortable. The results are always exactly what I want — natural and beautiful."</div>
+            <div class="testimonial-author">Tracy R.</div>
+            <div class="testimonial-service">Injectable Treatment</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial-slide">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">"I always feel I'm in good hands at Adam & Eve. The staff is knowledgeable, helpful, and takes the time to understand exactly what I need. I've been coming here for years and couldn't be happier with my results."</div>
+            <div class="testimonial-author">Janet M.</div>
+            <div class="testimonial-service">Botox & Fillers</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial-slide">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">"Nicole is absolutely THE BEST injector I've ever had. She has a true gift — my results look completely natural. The front desk staff, Barb and Amy, are also always so courteous and responsive. This place is truly special."</div>
+            <div class="testimonial-author">Rebecca L.</div>
+            <div class="testimonial-service">Juvederm & Botox</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial-slide">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">"I've tried other med spas in Scottsdale and nothing compares to Adam & Eve. The level of expertise here is unmatched. They took the time to understand my goals and delivered results that exceeded my expectations."</div>
+            <div class="testimonial-author">Sarah K.</div>
+            <div class="testimonial-service">Laser Treatment</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial-slide">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">"Down to earth, funny, and she gets it — that describes my provider perfectly. The whole experience makes a process that could feel intimidating actually feel easy and comfortable. I wouldn't go anywhere else."</div>
+            <div class="testimonial-author">Michelle D.</div>
+            <div class="testimonial-service">Aesthetic Consultation</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial-slide">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text">"The facility is beautiful, the staff is warm and professional, and the results are incredible. I came in for lip augmentation and left feeling more confident than ever. This is the only place I trust with my face."</div>
+            <div class="testimonial-author">Amanda P.</div>
+            <div class="testimonial-service">Lip Augmentation</div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination" style="margin-top:2rem; position:relative; bottom:auto;"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO section removed — Vimeo video ID not available; can be added once client provides embed link -->
+
+<!-- BOOKING CTA -->
+<section class="booking-cta" id="booking">
+  <div class="booking-bg"></div>
+  <div class="booking-cta-inner">
+    <div class="section-label">Begin Your Journey</div>
+    <h2 class="section-title">Ready to Look &amp; Feel<br><em>Your Best?</em></h2>
+    <p>Schedule your personalized consultation with our team of expert providers. We'll create a custom treatment plan designed around your unique goals and anatomy.</p>
+    <div class="booking-ctas">
+      <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank" class="btn-book" style="padding:1rem 2.5rem;">Book Online Now</a>
+      <a href="tel:4805756584" class="btn-outline" style="padding:1rem 2.5rem;">Call (480) 575-6584</a>
+    </div>
+    <a href="tel:4805756584" class="phone-link">Mon–Fri 9am–7pm &nbsp;·&nbsp; Sat 10am–5pm &nbsp;·&nbsp; Sun Closed</a>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <div class="container">
+    <h3>Stay Ahead of the Latest<br>Treatments & Specials</h3>
+    <p>Join our VIP list for exclusive offers, skincare tips, and seasonal promotions.</p>
+    <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name">Adam & Eve Medical Aesthetics</div>
+        <div class="brand-tag">Scottsdale, Arizona · Est. 2012</div>
+        <p>Allergan Black Diamond — top 1% in the US. Dedicated to the art of beauty and graceful aging since 2012.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/AdamAndEveMedSpa/" target="_blank" title="Facebook">f</a>
+          <a href="https://www.instagram.com/adamandevemedicalaesthetics/" target="_blank" title="Instagram">ig</a>
+          <a href="https://vimeo.com/user91919273" target="_blank" title="Vimeo">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank">Injectables</a>
+        <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank">Laser Treatments</a>
+        <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank">Aesthetic Treatments</a>
+        <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank">Skin Tightening</a>
+        <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank">Body Contouring</a>
+        <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank">Wellness</a>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <p>31309 N. Scottsdale Rd<br>Suite 100<br>Scottsdale, AZ 85266</p>
+        <a href="tel:4805756584">(480) 575-6584</a>
+        <p style="margin-top:0.5rem;">Mon–Fri: 9am – 7pm<br>Sat: 10am – 5pm<br>Sun: Closed</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#about">About Us</a>
+        <a href="#team">Our Team</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank">Book Online</a>
+        <a href="https://www.adamandevemedspa.com/" target="_blank">Full Website</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Adam & Eve Medical Aesthetics. All rights reserved.</p>
+      <p class="bar1-credit">Design concept by <a href="#" target="_blank">Bar1 Digital</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+// Header scroll effect
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Mobile menu
+const toggle = document.getElementById('mobileToggle');
+const menu = document.getElementById('mobileMenu');
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('open');
+  menu.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+});
+function closeMobileMenu() {
+  toggle.classList.remove('open');
+  menu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Testimonial Swiper
+new Swiper('.testimonialSwiper', {
+  slidesPerView: 1,
+  spaceBetween: 24,
+  loop: true,
+  autoplay: { delay: 5000, disableOnInteraction: false },
+  pagination: { el: '.swiper-pagination', clickable: true },
+  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+  breakpoints: {
+    640: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
+  }
+});
+
+// Lazy loading fallback
+document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+  if (!img.complete) {
+    img.addEventListener('error', function() {
+      // Images with onerror handlers will self-correct
+    });
+  }
+});
+
+// Newsletter submit
+function handleNewsletterSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.textContent = 'Thank You!';
+  btn.style.background = '#4a7c59';
+  setTimeout(() => {
+    btn.textContent = 'Subscribe';
+    btn.style.background = '';
+    e.target.reset();
+  }, 3000);
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
