@@ -239,8 +239,8 @@ h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', serif; }
 }
 .btn-book:hover {
   background: var(--gold-light);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(196,162,101,0.45);
+  transform: scale(1.03);
+  box-shadow: 0 8px 28px rgba(196,162,101,0.35);
 }
 .btn-outline {
   display: inline-block;
@@ -429,8 +429,10 @@ section { padding: 7rem 0; }
 
 /* ===== TICKER ===== */
 .award-ticker {
-  background: var(--gold);
-  padding: 0.7rem 0;
+  background: var(--cream-dark);
+  border-top: 1px solid rgba(196,162,101,0.2);
+  border-bottom: 1px solid rgba(196,162,101,0.2);
+  padding: 0.85rem 0;
   overflow: hidden;
   white-space: nowrap;
 }
@@ -444,7 +446,8 @@ section { padding: 7rem 0; }
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(20,20,20,0.85);
+  color: var(--text-dark);
+  opacity: 0.7;
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -470,7 +473,16 @@ section { padding: 7rem 0; }
   object-fit: cover;
   object-position: top;
   display: block;
-  mix-blend-mode: multiply;
+  filter: brightness(1.05) contrast(1.02);
+  border-radius: 4px;
+}
+.about-image::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(250,247,242,0.25) 100%);
+  pointer-events: none;
+  border-radius: 4px;
 }
 .about-image-accent {
   position: absolute;
@@ -637,6 +649,9 @@ section { padding: 7rem 0; }
   gap: 1.25rem;
   justify-items: center;
 }
+.team-grid .team-card:last-child:nth-child(3n+1) {
+  grid-column: 2;
+}
 .team-card {
   position: relative;
   overflow: hidden;
@@ -678,33 +693,6 @@ section { padding: 7rem 0; }
   font-size: 0.78rem;
   color: rgba(255,255,255,0.4);
   line-height: 1.5;
-}
-
-/* ===== MISSION ===== */
-.mission {
-  background: var(--cream-dark);
-  text-align: center;
-  padding: 8rem 0;
-}
-.mission-inner { max-width: 720px; margin: 0 auto; }
-.mission h2 {
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--text-dark);
-  line-height: 1.45;
-  margin-bottom: 2rem;
-}
-.mission p {
-  font-size: 1rem;
-  line-height: 1.9;
-  color: #666;
-}
-.mission-divider {
-  width: 60px;
-  height: 1px;
-  background: var(--gold);
-  margin: 2rem auto;
 }
 
 /* ===== TESTIMONIALS ===== */
@@ -942,12 +930,12 @@ footer {
 .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.3s; }
 .footer-bottom a:hover { color: var(--gold); }
 .bar1-credit {
-  font-size: 0.65rem;
-  color: rgba(255,255,255,0.2);
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.15);
   letter-spacing: 0.08em;
 }
-.bar1-credit a { color: var(--gold); opacity: 0.5; text-decoration: none; transition: opacity 0.3s; }
-.bar1-credit a:hover { opacity: 1; }
+.bar1-credit a { color: rgba(255,255,255,0.25); opacity: 0.6; text-decoration: none; transition: opacity 0.3s; }
+.bar1-credit a:hover { opacity: 1; color: var(--gold); }
 
 /* ===== PRICING ===== */
 .pricing { background: linear-gradient(135deg, rgba(196,162,101,0.04) 0%, rgba(224,160,64,0.02) 100%); }
@@ -1016,6 +1004,59 @@ footer {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===== MICRO TESTIMONIALS ===== */
+.micro-test-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .micro-test-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== STICKY BOOK BUTTON ===== */
+.sticky-book-btn {
+  position: fixed;
+  bottom: 2rem; right: 2rem;
+  background: var(--gold);
+  color: white;
+  padding: 0.85rem 1.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(196,162,101,0.4);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s, transform 0.4s, background 0.3s;
+  pointer-events: none;
+}
+.sticky-book-btn.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  animation: stickyPulse 2.5s ease-in-out infinite;
+}
+.sticky-book-btn:hover {
+  background: var(--gold-light);
+  transform: scale(1.05);
+  animation: none;
+}
+@keyframes stickyPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(196,162,101,0.4); }
+  50% { box-shadow: 0 4px 20px rgba(196,162,101,0.4), 0 0 0 6px rgba(196,162,101,0.1); }
+}
+@media (max-width: 768px) {
+  .sticky-book-btn { bottom: 1rem; right: 1rem; padding: 0.75rem 1.2rem; font-size: 0.65rem; }
 }
 
 /* ===== RESPONSIVE ===== */
@@ -1138,6 +1179,30 @@ footer {
   </div>
 </div>
 
+<!-- MICRO TESTIMONIALS -->
+<div style="background:white; padding:2.5rem 0; border-bottom:1px solid rgba(0,0,0,0.06);">
+  <div class="container" style="text-align:center;">
+    <div style="margin-bottom:1.5rem;">
+      <div style="font-size:0.7rem; color:#999; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.4rem;">What Clients Say</div>
+      <div style="font-size:1.3rem; font-weight:600; color:var(--text-dark); font-family:'Cormorant Garamond',serif;">4.9 ★ Rated by 233+ Happy Clients</div>
+    </div>
+    <div class="micro-test-grid">
+      <div style="text-align:center; padding:1rem;">
+        <div style="font-size:0.85rem; font-style:italic; color:#666; line-height:1.6; margin-bottom:0.5rem;">"Nicole is THE BEST injector I've ever had. My results look completely natural."</div>
+        <div style="font-size:0.72rem; font-weight:600; color:var(--text-dark);">Rebecca L. <span style="color:var(--gold); margin-left:0.25rem;">★★★★★</span></div>
+      </div>
+      <div style="text-align:center; padding:1rem;">
+        <div style="font-size:0.85rem; font-style:italic; color:#666; line-height:1.6; margin-bottom:0.5rem;">"Nothing compares to Adam & Eve. The level of expertise here is unmatched."</div>
+        <div style="font-size:0.72rem; font-weight:600; color:var(--text-dark);">Sarah K. <span style="color:var(--gold); margin-left:0.25rem;">★★★★★</span></div>
+      </div>
+      <div style="text-align:center; padding:1rem;">
+        <div style="font-size:0.85rem; font-style:italic; color:#666; line-height:1.6; margin-bottom:0.5rem;">"I came in for lip augmentation and left feeling more confident than ever."</div>
+        <div style="font-size:0.72rem; font-weight:600; color:var(--text-dark);">Amanda P. <span style="color:var(--gold); margin-left:0.25rem;">★★★★★</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="container">
@@ -1158,6 +1223,7 @@ footer {
         <p>Founded in 2012, Adam & Eve Medical Aesthetics has grown to become one of Scottsdale's most trusted and celebrated medical spas. Our team of licensed nurses, nurse practitioners, and master estheticians combine advanced medical training with an artist's eye for natural, beautiful results.</p>
         <div class="highlight">"Our goal is to help you achieve timeless beauty through natural enhancements — using advanced technology and industry expertise to bring out your best self."</div>
         <p>We've earned Allergan's prestigious Black Diamond status — placing us in the top 1% of aesthetic practices nationwide for Botox, Juvederm, and Voluma. But more than any award, we're proud of the trust our patients place in us every day.</p>
+        <p style="font-style:italic; color:#666; margin-top:0.5rem;">Our commitment to natural results means your friends will notice you look amazing — not that you've had work done.</p>
         <div class="about-stats">
           <div>
             <div class="stat-num">Top 1%</div>
@@ -1369,18 +1435,6 @@ footer {
   </div>
 </section>
 
-<!-- MISSION -->
-<section class="mission">
-  <div class="container">
-    <div class="mission-inner">
-      <div class="section-label" style="text-align:center;">Our Philosophy</div>
-      <h2>"We believe beauty is not about perfection — it's about bringing out the most confident, radiant version of you."</h2>
-      <div class="mission-divider"></div>
-      <p>At Adam & Eve Medical Aesthetics, every treatment begins with a thorough consultation. We listen to your goals, assess your unique anatomy, and design a personalized plan that honors who you are. Our commitment to natural results means your friends will notice you look amazing — not that you've had work done.</p>
-    </div>
-  </div>
-</section>
-
 <!-- TESTIMONIALS -->
 <section class="testimonials" id="testimonials">
   <div class="container">
@@ -1465,7 +1519,7 @@ footer {
 <div class="newsletter">
   <div class="container">
     <h3>Stay Ahead of the Latest<br>Treatments & Specials</h3>
-    <p>Join our VIP list for exclusive offers, skincare tips, and seasonal promotions.</p>
+    <p>Weekly skin tips, exclusive member offers, and new treatment updates — delivered to your inbox.</p>
     <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
       <input type="email" placeholder="Your email address" required>
       <button type="submit">Subscribe</button>
@@ -1517,6 +1571,8 @@ footer {
     </div>
   </div>
 </footer>
+
+<a href="https://adamevemedical.zenoti.com/webstoreNew/services" target="_blank" class="sticky-book-btn" id="stickyBookBtn">Book Now</a>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
@@ -1598,13 +1654,18 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-// Add reveal class and observe elements
-document.querySelectorAll('.section-label, .section-title, .about-image, .about-text .highlight, .service-card, .team-card, .pricing-card').forEach((el, idx) => {
+// Group elements by parent section for staggered reveals
+document.querySelectorAll('.section-label, .section-title, .about-image, .about-text .highlight').forEach(el => {
   el.classList.add('reveal');
-  if (el.classList.contains('service-card') || el.classList.contains('team-card') || el.classList.contains('pricing-card')) {
-    el.setAttribute('data-delay', idx * 100);
-  }
   revealObserver.observe(el);
+});
+// Stagger cards within their own grids
+document.querySelectorAll('.services-grid, .services-row2, .team-grid, .pricing-grid').forEach(grid => {
+  grid.querySelectorAll('.service-card, .team-card, .pricing-card').forEach((el, i) => {
+    el.classList.add('reveal');
+    el.setAttribute('data-delay', i * 120);
+    revealObserver.observe(el);
+  });
 });
 
 // Failsafe: reveal everything after 3 seconds if not already revealed
@@ -1623,6 +1684,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
+});
+
+// Sticky Book Now button
+const stickyBtn = document.getElementById('stickyBookBtn');
+const heroSection = document.getElementById('hero');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > heroSection.offsetHeight) {
+    stickyBtn.classList.add('visible');
+  } else {
+    stickyBtn.classList.remove('visible');
+  }
 });
 </script>
 </body>
