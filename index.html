@@ -434,7 +434,7 @@ section { padding: 7rem 0; }
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  gap: 3.5rem;
   align-items: start;
 }
 .about-image {
@@ -517,28 +517,36 @@ section { padding: 7rem 0; }
   margin: 2rem 0;
 }
 .about-stats {
-  grid-column: 1 / -1;
   display: flex;
-  gap: 3rem;
-  margin-top: 0;
-  padding: 2rem 0;
-  justify-content: center;
+  gap: 0;
+  margin-top: 1.5rem;
   text-align: center;
-  border-top: 1px solid rgba(0,0,0,0.06);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.about-stats > div {
+  flex: 1;
+  background: var(--dark);
+  padding: 1.25rem 1rem;
+  border-left: 2px solid var(--gold);
+}
+.about-stats > div:first-child {
+  border-radius: 4px 0 0 4px;
+}
+.about-stats > div:last-child {
+  border-radius: 0 4px 4px 0;
 }
 .stat-num {
   font-family: 'DM Sans', sans-serif;
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   font-weight: 300;
   color: var(--gold);
+  line-height: 1;
 }
 .stat-label {
-  font-size: 0.7rem;
-  color: var(--text-muted);
-  letter-spacing: 0.1em;
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  margin-top: 0.2rem;
+  margin-top: 0.35rem;
 }
 
 /* ===== SERVICES ===== */
@@ -1052,7 +1060,10 @@ footer {
 }
 @media (max-width: 480px) {
   .team-grid { grid-template-columns: 1fr; }
-  .about-stats { flex-wrap: wrap; gap: 1.5rem; }
+  .about-stats { flex-direction: column; gap: 0; }
+  .about-stats > div { border-radius: 0; }
+  .about-stats > div:first-child { border-radius: 4px 4px 0 0; }
+  .about-stats > div:last-child { border-radius: 0 0 4px 4px; }
   .cred-grid { flex-direction: column; align-items: center; }
   .cred-badge { width: 100%; max-width: 320px; justify-content: center; }
 }
@@ -1157,19 +1168,19 @@ footer {
           <div class="badge-num">12+</div>
           <div class="badge-text">Years in Scottsdale</div>
         </div>
-      </div>
-      <div class="about-stats">
-        <div>
-          <div class="stat-num">Top 1%</div>
-          <div class="stat-label">Allergan Black Diamond</div>
-        </div>
-        <div>
-          <div class="stat-num">4.9★</div>
-          <div class="stat-label">233+ Reviews</div>
-        </div>
-        <div>
-          <div class="stat-num">12+</div>
-          <div class="stat-label">Years of Excellence</div>
+        <div class="about-stats">
+          <div>
+            <div class="stat-num">Top 1%</div>
+            <div class="stat-label">Allergan Black Diamond</div>
+          </div>
+          <div>
+            <div class="stat-num">4.9★</div>
+            <div class="stat-label">233+ Reviews</div>
+          </div>
+          <div>
+            <div class="stat-num">12+</div>
+            <div class="stat-label">Years of Excellence</div>
+          </div>
         </div>
       </div>
       <div class="about-text">
