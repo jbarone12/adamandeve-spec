@@ -478,29 +478,6 @@ section { padding: 7rem 0; }
   opacity: 0.18;
   pointer-events: none;
 }
-.about-badge {
-  position: absolute;
-  top: 26rem;
-  left: -2.5rem;
-  background: var(--dark);
-  padding: 1.25rem 1.5rem;
-  border-left: 2px solid var(--gold);
-  z-index: 3;
-}
-.about-badge .badge-num {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 2rem;
-  font-weight: 300;
-  color: var(--gold);
-  line-height: 1;
-}
-.about-badge .badge-text {
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
-  margin-top: 0.25rem;
-}
 .about-text p {
   font-size: 1rem;
   line-height: 1.85;
@@ -1052,7 +1029,7 @@ footer {
   .service-card p { max-height: none; opacity: 0.8; }
   .service-card .service-learn { opacity: 1; transform: none; }
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .about-badge { left: 0; }
+
   .services-grid { grid-template-columns: 1fr; }
   .services-row2 { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; }
@@ -1167,11 +1144,11 @@ footer {
              alt="Adam & Eve Medical Aesthetics facility in Scottsdale"
              loading="lazy"
              onerror="this.src='https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&q=80'">
-        <div class="about-badge">
-          <div class="badge-num">12+</div>
-          <div class="badge-text">Years in Scottsdale</div>
-        </div>
         <div class="about-stats">
+          <div>
+            <div class="stat-num">12+</div>
+            <div class="stat-label">Years in Scottsdale</div>
+          </div>
           <div>
             <div class="stat-num">Top 1%</div>
             <div class="stat-label">Allergan Black Diamond</div>
